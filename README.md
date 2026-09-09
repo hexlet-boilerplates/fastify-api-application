@@ -52,7 +52,7 @@ $ npm run dev
 TypeError: pkgUp is not a function           # util.js, приложение не поднимается вовсе
 ```
 
-Поднимать пин можно после того, как оба отказа проверены запуском.
+Апстримная issue лежит по адресу <https://github.com/fastify/fastify-cli/issues/915>. Исправленной версии на npm пока нет. Поднимать пин можно после того, как оба отказа проверены запуском, и вместе с ним поднимается пин в уроке подготовки проекта курса «JS: REST API (Fastify)».
 
 Готовое API целиком, собранное по мотивам курса, лежит в
 [js-fastify-rest-api-example](https://github.com/hexlet-components/js-fastify-rest-api-example).
