@@ -27,6 +27,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: make install
+      - run: make format-check
         # Раннера тестов в шаблоне нет, его ставит урок про тестирование,
-        # поэтому проверяются только типы
+        # поэтому вместо тестов проверяются типы и живой ответ приложения
       - run: make check-types
+      - name: Приложение поднимается и отвечает
+        run: |
+          make start &
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:3000 | grep -q '"root":true'; then
+              echo "приложение ответило"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "приложение не ответило за 30 секунд"
+          exit 1
