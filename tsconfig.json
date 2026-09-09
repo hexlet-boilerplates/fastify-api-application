@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "nodenext",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "strict": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
+}

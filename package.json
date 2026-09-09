@@ -1,0 +1,23 @@
+{
+  "name": "fastify-api-application",
+  "version": "1.0.0",
+  "description": "Стартовый шаблон REST API на Fastify и TypeScript для курса «JS: REST API (Fastify)»",
+  "type": "module",
+  "scripts": {
+    "start": "fastify start -l info src/app.ts",
+    "dev": "fastify start -w -l info -P src/app.ts",
+    "check-types": "tsc"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^5.0.0",
+    "fastify-plugin": "^5.0.0",
+    "@fastify/autoload": "^6.0.0",
+    "@fastify/sensible": "^6.0.0",
+    "fastify-cli": "8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "typescript": "~5.9.2"
+  }
+}
