@@ -26,7 +26,7 @@ curl localhost:3000
 ## Команды
 
 ```bash
-make install      # поставить зависимости
+make install      # поставить зависимости и git-хуки (hk)
 make dev          # запуск с перезапуском и читаемыми логами
 make start        # запуск без перезапуска
 make check-types  # tsc, без вывода когда ошибок нет
