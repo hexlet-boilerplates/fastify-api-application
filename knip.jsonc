@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema-jsonc.json",
+  "entry": [
+    // fastify start src/app.ts в скриптах package.json, а @fastify/autoload
+    // подгружает плагины и маршруты по каталогам, статических импортов у них нет
+    "src/app.ts",
+    "src/plugins/*.ts",
+    "src/routes/**/*.ts",
+    // Раннер тестов в шаблоне не стоит, тесты запускает урок про тестирование
+    "test/**/*.ts",
+  ],
+}
