@@ -16,3 +16,8 @@ format:
 
 format-check:
 	npm run format:check
+
+lint:
+	rumdl check .
+	typos
+	jactionlint

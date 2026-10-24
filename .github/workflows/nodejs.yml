@@ -11,12 +11,22 @@ on:
 env:
   CI: true
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       # Node берётся из mise.toml
       - uses: jdx/mise-action@v5
       - run: make install
@@ -27,7 +37,7 @@ jobs:
       - name: Приложение поднимается и отвечает
         run: |
           make start &
-          for i in $(seq 1 30); do
+          for _ in $(seq 1 30); do
             if curl -sf http://127.0.0.1:3000 | grep -q '"root":true'; then
               echo "приложение ответило"
               exit 0

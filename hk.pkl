@@ -8,4 +8,7 @@ steps {
     ["types"] {
         check = "make check-types"
     }
+    ["lint"] {
+        check = "make lint"
+    }
 }
